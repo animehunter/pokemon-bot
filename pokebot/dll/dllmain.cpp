@@ -24,6 +24,9 @@ VERSION = 1.0.6-svn
 #define CDECL_CALL __cdecl
 #define DLL_EXPORT __declspec(dllexport)
 
+typedef void(*HOOKPROC)(void);
+static HOOKPROC hooks[65535] = {0};
+
 static struct emu_state
 {
     struct cpu *cpu;
@@ -83,6 +86,12 @@ void doevents()
         st = (ev.type != EV_RELEASE);
         rc_dokey(ev.code, st);
     }
+
+    HOOKPROC h = hooks[cpu.pc.w[0]];
+    if (h)
+    {
+        h();
+    }
 }
 
 
@@ -138,6 +147,11 @@ static char *base(char *s)
 extern "C" DLL_EXPORT emu_state* CDECL_CALL EmuGetState()
 {
     return &state;
+}
+
+extern "C" DLL_EXPORT void CDECL_CALL EmuSetHook(unsigned short addr, HOOKPROC proc)
+{
+    hooks[addr] = proc;
 }
 
 extern "C" DLL_EXPORT void CDECL_CALL EmuMain(char *rom)

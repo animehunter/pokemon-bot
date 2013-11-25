@@ -72,16 +72,29 @@ class EmuState(Structure):
                 ('rtc', POINTER(RTC)),]
     _pack_ = PACK
 
+HOOKPROC = CFUNCTYPE(None)
+
 EmuGetState = cdll.pokebot.EmuGetState
 EmuGetState.argtypes = None
 EmuGetState.restype = POINTER(EmuState)
+
+EmuSetHook = cdll.pokebot.EmuSetHook
+EmuSetHook.argtypes = [c_ushort, HOOKPROC]
+EmuSetHook.restype = None
 
 EmuMain = cdll.pokebot.EmuMain
 EmuMain.argtypes = [c_char_p]
 EmuMain.restype = None
 
+state = EmuGetState()
+
+def testhook():
+    print(state.contents.cpu.contents.pc.w[0])
+    
 def main():
-    state = EmuGetState()
+    hook = HOOKPROC(testhook)
+    for i in range(65535):
+        EmuSetHook(i, hook)
     EmuMain(b'pokered.gb')
 
 if __name__ == '__main__':
