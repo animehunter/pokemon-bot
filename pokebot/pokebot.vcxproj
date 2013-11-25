@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="cpu.c" />
     <ClCompile Include="debug.c" />
+    <ClCompile Include="dll\dllmain.cpp" />
     <ClCompile Include="emu.c" />
     <ClCompile Include="events.c" />
     <ClCompile Include="exports.c" />
@@ -95,7 +96,6 @@
     <ClCompile Include="lcd.c" />
     <ClCompile Include="lcdc.c" />
     <ClCompile Include="loader.c" />
-    <ClCompile Include="main.c" />
     <ClCompile Include="mem.c" />
     <ClCompile Include="palette.c" />
     <ClCompile Include="path.c" />

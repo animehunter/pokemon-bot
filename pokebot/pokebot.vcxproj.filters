@@ -68,9 +68,6 @@
     <ClCompile Include="loader.c">
       <Filter>gnuboy</Filter>
     </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>gnuboy</Filter>
-    </ClCompile>
     <ClCompile Include="mem.c">
       <Filter>gnuboy</Filter>
     </ClCompile>
@@ -106,6 +103,9 @@
     </ClCompile>
     <ClCompile Include="split.c">
       <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="dll\dllmain.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
