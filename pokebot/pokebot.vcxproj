@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{23ACFEBD-B328-4B4E-B973-6B77D3F9114D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>pokebot</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;GNUBOY_NO_MINIZIP;GNUBOY_DISABLE_SDL_SOUND;IS_LITTLE_ENDIAN;ALT_PATH_SEP;GNUBOY_USE_SDL_TIMERS;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)sdl\include;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;winmm.lib;Imm32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)sdl\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;GNUBOY_NO_MINIZIP;GNUBOY_DISABLE_SDL_SOUND;IS_LITTLE_ENDIAN;ALT_PATH_SEP;GNUBOY_USE_SDL_TIMERS;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)sdl\include;$(ProjectDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;winmm.lib;Imm32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)sdl\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cpu.c" />
+    <ClCompile Include="debug.c" />
+    <ClCompile Include="emu.c" />
+    <ClCompile Include="events.c" />
+    <ClCompile Include="exports.c" />
+    <ClCompile Include="fastmem.c" />
+    <ClCompile Include="hw.c" />
+    <ClCompile Include="inflate.c" />
+    <ClCompile Include="keytable.c" />
+    <ClCompile Include="lcd.c" />
+    <ClCompile Include="lcdc.c" />
+    <ClCompile Include="loader.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="mem.c" />
+    <ClCompile Include="palette.c" />
+    <ClCompile Include="path.c" />
+    <ClCompile Include="rccmds.c" />
+    <ClCompile Include="rcfile.c" />
+    <ClCompile Include="rckeys.c" />
+    <ClCompile Include="rcvars.c" />
+    <ClCompile Include="refresh.c" />
+    <ClCompile Include="rtc.c" />
+    <ClCompile Include="save.c" />
+    <ClCompile Include="sound.c" />
+    <ClCompile Include="split.c" />
+    <ClCompile Include="sys\sdl\keymap.c" />
+    <ClCompile Include="sys\sdl\sdl.c" />
+    <ClCompile Include="sys\sdl\SFont.c" />
+    <ClCompile Include="sys\windows\windows.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cpu.h" />
+    <ClInclude Include="cpucore.h" />
+    <ClInclude Include="cpuregs.h" />
+    <ClInclude Include="defs.h" />
+    <ClInclude Include="fastmem.h" />
+    <ClInclude Include="fb.h" />
+    <ClInclude Include="gnuboy.h" />
+    <ClInclude Include="hw.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="lcd.h" />
+    <ClInclude Include="loader.h" />
+    <ClInclude Include="mem.h" />
+    <ClInclude Include="noise.h" />
+    <ClInclude Include="pcm.h" />
+    <ClInclude Include="rc.h" />
+    <ClInclude Include="regs.h" />
+    <ClInclude Include="rtc.h" />
+    <ClInclude Include="sound.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

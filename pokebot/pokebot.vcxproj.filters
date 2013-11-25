@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="gnuboy">
+      <UniqueIdentifier>{fe92f037-0171-488f-85a2-b9a9aab3727c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gnuboy\windows">
+      <UniqueIdentifier>{26c4aff3-bec8-4134-8be0-b6b2fc409472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gnuboy\headers">
+      <UniqueIdentifier>{f9c4fd6d-7b1c-4b65-bcec-491e2e3cd78f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sys\windows\windows.c">
+      <Filter>gnuboy\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\sdl\keymap.c">
+      <Filter>gnuboy\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\sdl\sdl.c">
+      <Filter>gnuboy\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="sys\sdl\SFont.c">
+      <Filter>gnuboy\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="emu.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="events.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="exports.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="fastmem.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="hw.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="inflate.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="keytable.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="lcd.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="lcdc.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="loader.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="mem.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="palette.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="path.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="rccmds.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="rcfile.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="rckeys.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="rcvars.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="refresh.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="rtc.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="save.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="sound.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+    <ClCompile Include="split.c">
+      <Filter>gnuboy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sound.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cpucore.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cpuregs.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="defs.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="fastmem.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="fb.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="gnuboy.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="hw.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="lcd.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="loader.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="mem.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="noise.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pcm.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="rc.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="regs.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc.h">
+      <Filter>gnuboy\headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
