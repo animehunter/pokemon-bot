@@ -14,6 +14,8 @@ extern "C"
 #include "cpu.h"
 #include "mem.h"
 #include "rtc.h"
+#include "hw.h"
+#include "lcd.h"
 }
 
 
@@ -25,7 +27,9 @@ VERSION = 1.0.6-svn
 #define DLL_EXPORT __declspec(dllexport)
 
 typedef void(*HOOKPROC)(void);
-static HOOKPROC hooks[65535] = {0};
+
+void emptyhook() {}
+static HOOKPROC hook = emptyhook;
 
 static struct emu_state
 {
@@ -39,14 +43,14 @@ static struct emu_state
 static char *defaultconfig[] =
 {
     "bind esc quit",
-    "bind up +up",
-    "bind down +down",
-    "bind left +left",
-    "bind right +right",
-    "bind d +a",
-    "bind s +b",
-    "bind enter +start",
-    "bind space +select",
+    "bind w +up",
+    "bind s +down",
+    "bind a +left",
+    "bind d +right",
+    "bind num2 +a",
+    "bind num1 +b",
+    "bind num0 +start",
+    "bind numdot +select",
     "bind tab +select",
     "bind joyup +up",
     "bind joydown +down",
@@ -87,11 +91,7 @@ void doevents()
         rc_dokey(ev.code, st);
     }
 
-    HOOKPROC h = hooks[cpu.pc.w[0]];
-    if (h)
-    {
-        h();
-    }
+    hook();
 }
 
 
@@ -149,9 +149,14 @@ extern "C" DLL_EXPORT emu_state* CDECL_CALL EmuGetState()
     return &state;
 }
 
-extern "C" DLL_EXPORT void CDECL_CALL EmuSetHook(unsigned short addr, HOOKPROC proc)
+extern "C" DLL_EXPORT void CDECL_CALL EmuSetHook(HOOKPROC proc)
 {
-    hooks[addr] = proc;
+    hook = proc;
+}
+
+extern "C" DLL_EXPORT void CDECL_CALL EmuSetKey(byte key, int onOff)
+{
+    pad_set(key, onOff);
 }
 
 extern "C" DLL_EXPORT void CDECL_CALL EmuMain(char *rom)
